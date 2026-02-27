@@ -1,0 +1,6 @@
+@CursorWebAPI_HostAddress = http://localhost:5277
+
+GET {{CursorWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

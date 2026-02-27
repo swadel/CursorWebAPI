@@ -1,0 +1,49 @@
+# Cursor Rules — CursorWebAPI (.NET / C#)
+
+You are an AI coding assistant working in this repository.
+
+## Primary Goals
+- Keep changes small, reviewable, and incremental.
+- Keep builds/tests green once they exist.
+- Favor clarity and idiomatic .NET over cleverness.
+
+## Workflow Rules
+- Before making changes: briefly summarize intended edits and which files will change.
+- Prefer 1 focused change per commit.
+- Do not refactor unrelated code.
+- If you need new dependencies/packages, ask first and justify.
+
+## Coding Standards (C#)
+- Use the latest C# supported by the target framework.
+- Enable/assume nullable reference types; do not introduce nullable warnings.
+- Prefer explicit types when clarity matters; otherwise `var` is fine.
+- Keep methods small; avoid deeply nested logic.
+- Use `async/await` properly; avoid `.Result`/`.Wait()`.
+
+## API Conventions (when API code exists)
+- Prefer consistent error responses (ProblemDetails for errors).
+- Validate inputs; return correct status codes.
+- Avoid breaking changes to existing endpoints without calling it out.
+
+## Testing Standards
+- Write tests for new behavior.
+- Prefer unit tests for pure logic; integration tests for API/persistence.
+- Tests should be deterministic and fast.
+- If a change is hard to test, explain why and propose an alternative design.
+
+## Build / Run
+- After changes, ensure these would succeed:
+  - `dotnet build`
+  - `dotnet test`
+
+## Safety / Constraints
+- Do not add or expose secrets (API keys, tokens) in code or config.
+- Do not log sensitive data.
+- Do not delete files unless explicitly instructed.
+
+## Output Format Preference
+After completing a change, summarize:
+1) What changed (bullets)
+2) Files touched
+3) How to run / test
+4) Next recommended step
