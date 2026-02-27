@@ -1,4 +1,5 @@
 using CursorWebAPI.Domain;
+using CursorWebAPI.Infrastructure.Seed;
 using Microsoft.EntityFrameworkCore;
 
 namespace CursorWebAPI.Infrastructure;
@@ -22,6 +23,8 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
         shows.Property(s => s.YouTubeUrl).HasMaxLength(500);
 
         shows.HasIndex(s => s.ShowDate);
+
+        shows.HasData(ShowSeedData.Shows);
     }
 }
 
